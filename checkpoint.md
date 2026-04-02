@@ -9,17 +9,17 @@
 ---
 
 ## Última Tarefa Concluída
-**0.5** — docker-compose.yml criado (produção + dev), Dockerfiles para frontend e backend.
+**FASE 1 completa** — Migrations SQL do Supabase: schema, RLS, triggers e funções RPC criados.
 
 ---
 
 ## Tarefa Atual
-**0.6** — Configurar projeto no Supabase (SQL: tabelas, RLS, triggers, função decrement_mana)
+**FASE 2 — Tarefa 2.1** — Verificar e finalizar o backend FastAPI (todas as dependências, testes)
 
 ---
 
 ## Próximo Passo
-**FASE 1** — Banco de Dados & Auth: criar migrations SQL completas para o Supabase
+**FASE 3 — Tarefa 3.1** — Iniciar as páginas do frontend: Auth, Dashboard, Generate, Story
 
 ---
 
@@ -31,10 +31,15 @@
 - [x] 0.3 Criar backend FastAPI + estrutura de pastas
 - [x] 0.4 Configurar variáveis de ambiente (`.env.example`) — feito junto com 0.2 e 0.3
 - [x] 0.5 Criar `docker-compose.yml`
-- [ ] 0.6 Configurar projeto no Supabase
+- [x] 0.6 Configurar projeto no Supabase
 
 ### FASE 1 — Banco de Dados & Auth
-- [ ] Aguardando FASE 0
+- [x] 1.1 Tabela `profiles` (id, username, avatar_url, mana_balance, created_at)
+- [x] 1.2 Tabela `stories` (id, user_id, title, source_text, generated_story, subject, created_at)
+- [x] 1.3 Tabela `mana_transactions` (id, user_id, amount, type, description, created_at)
+- [x] 1.4 Row Level Security (RLS) em todas as tabelas
+- [x] 1.5 Trigger `on_auth_user_created` + 100 Mana de boas-vindas
+- [x] 1.6 Funções RPC: `decrement_mana`, `credit_mana`, `set_updated_at`
 
 ### FASE 2 — Backend FastAPI
 - [ ] Aguardando FASE 1
