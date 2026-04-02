@@ -9,17 +9,18 @@
 ---
 
 ## Última Tarefa Concluída
-**0.2** — Frontend Next.js 14 criado: App Router, Tailwind gamificado, layout base, landing page e utilitários.
+**0.3** — Backend FastAPI criado: estrutura completa com routers, services, models, middleware e teste smoke.
 
 ---
 
 ## Tarefa Atual
-**0.3** — Criar `backend/` com FastAPI + estrutura de pastas
+**0.4** — Configurar variáveis de ambiente (`.env.example` para ambos) ✅ já criados em 0.2 e 0.3
+**0.5** — Criar `docker-compose.yml`
 
 ---
 
 ## Próximo Passo
-**0.4** — Configurar variáveis de ambiente (`.env.example` para ambos)
+**0.6** — Configurar projeto no Supabase (tabelas, RLS, triggers)
 
 ---
 
@@ -28,8 +29,8 @@
 ### FASE 0 — Setup & Infraestrutura Base
 - [x] 0.1 Inicializar monorepo (pastas `frontend/` e `backend/`)
 - [x] 0.2 Criar frontend Next.js 14 + Tailwind CSS
-- [ ] 0.3 Criar backend FastAPI + estrutura de pastas
-- [ ] 0.4 Configurar variáveis de ambiente (`.env.example`)
+- [x] 0.3 Criar backend FastAPI + estrutura de pastas
+- [x] 0.4 Configurar variáveis de ambiente (`.env.example`) — feito junto com 0.2 e 0.3
 - [ ] 0.5 Criar `docker-compose.yml`
 - [ ] 0.6 Configurar projeto no Supabase
 
