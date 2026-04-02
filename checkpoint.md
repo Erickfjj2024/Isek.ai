@@ -9,24 +9,24 @@
 ---
 
 ## Última Tarefa Concluída
-> Nenhuma tarefa concluída ainda. Projeto recém-inicializado.
+**0.1** — Monorepo inicializado: pastas `frontend/`, `backend/` e `.gitignore` criados.
 
 ---
 
 ## Tarefa Atual
-**0.1** — Inicializar repositório monorepo (pastas `frontend/` e `backend/`)
+**0.2** — Criar `frontend/` com Next.js 14 (App Router) + Tailwind CSS
 
 ---
 
 ## Próximo Passo
-**0.2** — Criar `frontend/` com Next.js 14 (App Router) + Tailwind CSS
+**0.3** — Criar `backend/` com FastAPI + estrutura de pastas
 
 ---
 
 ## Progresso por Fase
 
 ### FASE 0 — Setup & Infraestrutura Base
-- [ ] 0.1 Inicializar monorepo (pastas `frontend/` e `backend/`)
+- [x] 0.1 Inicializar monorepo (pastas `frontend/` e `backend/`)
 - [ ] 0.2 Criar frontend Next.js 14 + Tailwind CSS
 - [ ] 0.3 Criar backend FastAPI + estrutura de pastas
 - [ ] 0.4 Configurar variáveis de ambiente (`.env.example`)
