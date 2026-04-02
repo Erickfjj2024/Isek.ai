@@ -9,18 +9,17 @@
 ---
 
 ## Última Tarefa Concluída
-**0.3** — Backend FastAPI criado: estrutura completa com routers, services, models, middleware e teste smoke.
+**0.5** — docker-compose.yml criado (produção + dev), Dockerfiles para frontend e backend.
 
 ---
 
 ## Tarefa Atual
-**0.4** — Configurar variáveis de ambiente (`.env.example` para ambos) ✅ já criados em 0.2 e 0.3
-**0.5** — Criar `docker-compose.yml`
+**0.6** — Configurar projeto no Supabase (SQL: tabelas, RLS, triggers, função decrement_mana)
 
 ---
 
 ## Próximo Passo
-**0.6** — Configurar projeto no Supabase (tabelas, RLS, triggers)
+**FASE 1** — Banco de Dados & Auth: criar migrations SQL completas para o Supabase
 
 ---
 
@@ -31,7 +30,7 @@
 - [x] 0.2 Criar frontend Next.js 14 + Tailwind CSS
 - [x] 0.3 Criar backend FastAPI + estrutura de pastas
 - [x] 0.4 Configurar variáveis de ambiente (`.env.example`) — feito junto com 0.2 e 0.3
-- [ ] 0.5 Criar `docker-compose.yml`
+- [x] 0.5 Criar `docker-compose.yml`
 - [ ] 0.6 Configurar projeto no Supabase
 
 ### FASE 1 — Banco de Dados & Auth
