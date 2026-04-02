@@ -9,17 +9,18 @@
 ---
 
 ## Última Tarefa Concluída
-**FASE 1 completa** — Migrations SQL do Supabase: schema, RLS, triggers e funções RPC criados.
+**FASE 3 (3.3–3.9)** — Páginas frontend: Auth, Dashboard, Generate, Story + Supabase client + Middleware + Componentes ManaBar/Navbar.
 
 ---
 
 ## Tarefa Atual
-**FASE 2 — Tarefa 2.1** — Verificar e finalizar o backend FastAPI (todas as dependências, testes)
+**FASE 3 — Tarefa 3.10** — Loading states gamificados (já implementados inline no GenerateForm)
+**FASE 4 — Tarefa 4.1–4.5** — Sistema de Monetização (Stripe + planos de Mana)
 
 ---
 
 ## Próximo Passo
-**FASE 3 — Tarefa 3.1** — Iniciar as páginas do frontend: Auth, Dashboard, Generate, Story
+Revisar se falta algo nas páginas existentes, depois partir para FASE 4 (Stripe) ou FASE 5 (Deploy)
 
 ---
 
@@ -45,7 +46,17 @@
 - [ ] Aguardando FASE 1
 
 ### FASE 3 — Frontend Next.js
-- [ ] Aguardando FASE 2
+- [x] 3.1 Layout base gamificado (globals.css, tailwind tema)
+- [x] 3.2 Landing page (/)
+- [x] 3.3 Página de Auth (/auth) — login/registro visual RPG
+- [x] 3.4 Componente ManaBar (barra animada com estados danger/low)
+- [x] 3.5 Dashboard (/dashboard) — painel do herói, stats, histórias recentes
+- [x] 3.6 Página de Upload (/generate) — texto ou PDF, seleção de matéria
+- [x] 3.7 Página de Resultado (/story/[id]) — StoryViewer com seções
+- [x] 3.8 Integração Supabase Auth (client, server, middleware de proteção de rotas)
+- [x] 3.9 Integração com API FastAPI (fetch autenticado no GenerateForm)
+- [x] 3.10 Loading states gamificados ("Invocando o mundo Isekai...")
+- [ ] 3.11 Página de perfil (/profile) — pendente
 
 ### FASE 4 — Monetização
 - [ ] Aguardando FASE 3
