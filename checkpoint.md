@@ -70,7 +70,7 @@ FASE 4 (Stripe + planos de Mana) ou FASE 5 (executar o deploy seguindo DEPLOY.md
 
 ## Anotações / Bugs / Decisões Técnicas
 - Projeto iniciado com monorepo simples (sem Turborepo por ora, manter simples)
-- LLM a definir: Claude (Anthropic) é preferível dado o contexto; configurar via variável de ambiente `LLM_PROVIDER`
+- LLM: Groq ou Gemini via API compatível com OpenAI, selecionado por `LLM_PROVIDER` (padrão: groq)
 - Custo de Mana por geração: 10 unidades
 - Mana inicial de boas-vindas: 100 unidades (trigger no Supabase)
 - Supabase será usado tanto para Auth quanto para DB (evitar complexidade extra)

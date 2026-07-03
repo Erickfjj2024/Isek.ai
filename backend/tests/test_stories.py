@@ -84,11 +84,11 @@ def _make_supabase_mock(mana_balance: int):
 def _make_service(mana_balance: int, story_text: str = "Era uma vez em outro mundo..."):
     supabase, tables = _make_supabase_mock(mana_balance)
     llm = MagicMock()
-    llm.messages.create.return_value = SimpleNamespace(
-        content=[SimpleNamespace(text=story_text)]
+    llm.chat.completions.create.return_value = SimpleNamespace(
+        choices=[SimpleNamespace(message=SimpleNamespace(content=story_text))]
     )
     with patch("app.services.story_service.create_client", return_value=supabase), \
-         patch("app.services.story_service.anthropic.Anthropic", return_value=llm):
+         patch("app.services.story_service.OpenAI", return_value=llm):
         from app.services.story_service import StoryService
 
         service = StoryService()
@@ -107,7 +107,7 @@ async def test_insufficient_mana_raises_402_without_llm_call():
         )
 
     assert exc_info.value.status_code == 402
-    llm.messages.create.assert_not_called()
+    llm.chat.completions.create.assert_not_called()
 
 
 async def test_generate_and_save_debits_mana_and_persists():

@@ -9,7 +9,7 @@ os.environ.setdefault("SUPABASE_URL", "https://fake.supabase.co")
 os.environ.setdefault("SUPABASE_ANON_KEY", "fake-anon-key")
 os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "fake-service-role-key")
 os.environ.setdefault("SUPABASE_JWT_SECRET", "test-jwt-secret")
-os.environ.setdefault("ANTHROPIC_API_KEY", "fake-anthropic-key")
+os.environ.setdefault("LLM_API_KEY", "fake-llm-key")
 
 import pytest
 from fastapi.testclient import TestClient

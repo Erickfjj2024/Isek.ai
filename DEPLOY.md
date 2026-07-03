@@ -44,8 +44,9 @@ Variáveis de ambiente:
 | `SUPABASE_ANON_KEY` | anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | service_role key |
 | `SUPABASE_JWT_SECRET` | JWT Secret (Settings → API) |
-| `ANTHROPIC_API_KEY` | chave da API Anthropic |
-| `LLM_MODEL` | `claude-sonnet-4-6` (ou outro) |
+| `LLM_PROVIDER` | `groq` ou `gemini` |
+| `LLM_API_KEY` | chave do [console.groq.com](https://console.groq.com) ou [aistudio.google.com](https://aistudio.google.com) |
+| `LLM_MODEL` | opcional — vazio usa o padrão (`llama-3.3-70b-versatile` no Groq, `gemini-2.5-flash` no Gemini) |
 | `APP_ENV` | `production` (desativa `/docs` e `/redoc`) |
 | `SECRET_KEY` | `openssl rand -hex 32` |
 | `ALLOWED_ORIGINS` | `https://SEU-APP.vercel.app` (separar múltiplas por vírgula) |

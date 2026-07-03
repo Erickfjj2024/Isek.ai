@@ -5,8 +5,8 @@ uvicorn[standard]==0.29.0
 # PDF extraction
 pdfplumber==0.11.0
 
-# LLM client
-anthropic==0.26.0
+# LLM client (Groq/Gemini via API compatível com OpenAI)
+openai==1.59.7
 
 # Supabase
 supabase==2.4.6

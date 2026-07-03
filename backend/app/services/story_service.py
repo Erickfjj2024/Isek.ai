@@ -10,8 +10,8 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timezone
 
-import anthropic
 from fastapi import HTTPException, status
+from openai import OpenAI
 from supabase import create_client
 
 from app.config import get_settings
@@ -26,7 +26,10 @@ class StoryService:
             self._settings.supabase_url,
             self._settings.supabase_service_role_key,
         )
-        self._llm = anthropic.Anthropic(api_key=self._settings.anthropic_api_key)
+        self._llm = OpenAI(
+            api_key=self._settings.llm_api_key,
+            base_url=self._settings.llm_base_url,
+        )
 
     # ── Public ────────────────────────────────────────────────────────────
 
@@ -105,13 +108,15 @@ class StoryService:
     # ── Private ───────────────────────────────────────────────────────────
 
     def _call_llm(self, user_prompt: str) -> str:
-        message = self._llm.messages.create(
-            model=self._settings.llm_model,
+        completion = self._llm.chat.completions.create(
+            model=self._settings.resolved_llm_model,
             max_tokens=4096,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_prompt}],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
         )
-        return message.content[0].text  # type: ignore[index]
+        return completion.choices[0].message.content or ""
 
     def _get_mana_balance(self, user_id: str) -> int:
         response = (
