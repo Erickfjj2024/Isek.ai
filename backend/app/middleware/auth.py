@@ -31,9 +31,9 @@ async def get_current_user(
     try:
         payload = jwt.decode(
             token,
-            settings.supabase_anon_key,
+            settings.supabase_jwt_secret,
             algorithms=["HS256"],
-            options={"verify_aud": False},
+            audience="authenticated",
         )
         user_id: str | None = payload.get("sub")
         if user_id is None:

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import ManaBar from './ManaBar'
-import { LogOut, Swords } from 'lucide-react'
+import { LogOut, Swords, User } from 'lucide-react'
 
 interface NavbarProps {
   username?: string | null
@@ -42,11 +42,16 @@ export default function Navbar({ username, manaBalance = 0 }: NavbarProps) {
             <span className="hidden sm:inline">Gerar História</span>
           </Link>
 
-          {/* Username */}
+          {/* Username → profile */}
           {username && (
-            <span className="hidden text-xs text-mana-500 md:block">
+            <Link
+              href="/profile"
+              className="hidden items-center gap-1.5 text-xs text-mana-500 hover:text-mana-300 transition-colors md:flex"
+              title="Perfil do Herói"
+            >
+              <User size={14} />
               {username}
-            </span>
+            </Link>
           )}
 
           {/* Logout */}

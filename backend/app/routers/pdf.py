@@ -6,8 +6,9 @@ from __future__ import annotations
 
 import io
 
-from fastapi import APIRouter, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 
+from app.middleware.auth import get_current_user
 from app.models.schemas import ExtractTextResponse
 
 router = APIRouter(prefix="/api", tags=["pdf"])
@@ -21,7 +22,10 @@ MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
     response_model=ExtractTextResponse,
     summary="Extrai texto de um PDF enviado pelo usuário",
 )
-async def extract_text(file: UploadFile = File(...)):
+async def extract_text(
+    file: UploadFile = File(...),
+    current_user: dict = Depends(get_current_user),
+):
     if file.content_type not in ("application/pdf",):
         raise HTTPException(
             status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,

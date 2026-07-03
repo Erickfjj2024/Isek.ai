@@ -3,24 +3,23 @@
 ---
 
 ## Status Geral
-**Fase Atual:** FASE 0 — Setup & Infraestrutura Base
-**Data da Última Atualização:** 2026-04-02
+**Fase Atual:** MVP completo — pronto para deploy (FASE 5) ou monetização (FASE 4)
+**Data da Última Atualização:** 2026-07-03
 
 ---
 
 ## Última Tarefa Concluída
-**FASE 3 (3.3–3.9)** — Páginas frontend: Auth, Dashboard, Generate, Story + Supabase client + Middleware + Componentes ManaBar/Navbar.
+**MVP finalizado** — Fix crítico de auth JWT (backend validava com anon key; agora usa `SUPABASE_JWT_SECRET` + `aud="authenticated"`), auth no `/api/extract-text`, páginas `/stories` e `/profile` (com edição de username e histórico de Mana), suíte de 19 testes pytest, CI GitHub Actions, DEPLOY.md, ajustes de Docker para produção.
 
 ---
 
 ## Tarefa Atual
-**FASE 3 — Tarefa 3.10** — Loading states gamificados (já implementados inline no GenerateForm)
-**FASE 4 — Tarefa 4.1–4.5** — Sistema de Monetização (Stripe + planos de Mana)
+Nenhuma em andamento.
 
 ---
 
 ## Próximo Passo
-Revisar se falta algo nas páginas existentes, depois partir para FASE 4 (Stripe) ou FASE 5 (Deploy)
+FASE 4 (Stripe + planos de Mana) ou FASE 5 (executar o deploy seguindo DEPLOY.md)
 
 ---
 
@@ -56,7 +55,10 @@ Revisar se falta algo nas páginas existentes, depois partir para FASE 4 (Stripe
 - [x] 3.8 Integração Supabase Auth (client, server, middleware de proteção de rotas)
 - [x] 3.9 Integração com API FastAPI (fetch autenticado no GenerateForm)
 - [x] 3.10 Loading states gamificados ("Invocando o mundo Isekai...")
-- [ ] 3.11 Página de perfil (/profile) — pendente
+- [x] 3.11 Página de perfil (/profile) — com edição de username e histórico de Mana
+- [x] Extra: página /stories (lista completa) + link de perfil no Navbar
+- [x] Extra: suíte de testes do backend (19 testes) + CI GitHub Actions
+- [x] Extra: fix do bug de validação JWT + auth no /api/extract-text
 
 ### FASE 4 — Monetização
 - [ ] Aguardando FASE 3
@@ -80,6 +82,7 @@ Revisar se falta algo nas páginas existentes, depois partir para FASE 4 (Stripe
 SUPABASE_URL=
 SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_JWT_SECRET=
 LLM_API_KEY=
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
