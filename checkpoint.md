@@ -68,8 +68,10 @@ FASE 4 (Stripe + planos de Mana) ou FASE 5 (executar o deploy seguindo DEPLOY.md
 - [x] 5.2 Config de deploy do backend — `render.yaml` (Render Blueprint) + Dockerfile com `$PORT` dinâmico
 - [x] 5.3 Config de deploy do frontend — `vercel.json` + `public/` exigido pelo Docker build
 - [x] 5.4 Variáveis de produção documentadas (`DEPLOY.md` + Blueprint)
+- [x] 5.1 (auth E2E) JWT secret do projeto de teste validado localmente: 403 sem token,
+      401 com token inválido, 200 + extração de PDF com token assinado pelo secret real
 - [ ] 5.5 Deploy manual nos dashboards (Render Blueprint + Vercel) e smoke tests em produção
-      ⚠️ Falta obter o `SUPABASE_JWT_SECRET` (dashboard Supabase → Settings → API)
+      (todas as credenciais de teste disponíveis — valores em `backend/.env` local)
 
 ---
 
