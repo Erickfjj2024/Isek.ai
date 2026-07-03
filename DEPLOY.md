@@ -31,9 +31,13 @@ Stack de produção recomendada:
 
 ## 2. Backend (Railway ou Render)
 
+- **Render (recomendado — Blueprint pronto)**: New → **Blueprint** → conecte o repo.
+  O Render lê o `render.yaml` da raiz e cria o serviço `isek-ai-backend` sozinho
+  (Docker, plano free, health check em `/health`); só falta preencher as variáveis
+  marcadas como secretas no dashboard.
 - **Railway**: New Project → Deploy from GitHub → selecione o repo, root directory `backend/`
-  (o `Dockerfile` é detectado automaticamente).
-- **Render**: New Web Service → root directory `backend/`, runtime Docker,
+  (o `Dockerfile` é detectado automaticamente e já respeita a variável `$PORT`).
+- **Render (manual)**: New Web Service → root directory `backend/`, runtime Docker,
   ou start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
 
 Variáveis de ambiente:

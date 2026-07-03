@@ -64,7 +64,12 @@ FASE 4 (Stripe + planos de Mana) ou FASE 5 (executar o deploy seguindo DEPLOY.md
 - [ ] Aguardando FASE 3
 
 ### FASE 5 — Deploy
-- [ ] Aguardando FASE 4
+- [x] 5.1 (parcial) Validação local: 19 testes pytest + lint + build de produção do Next.js + smoke test `/health`
+- [x] 5.2 Config de deploy do backend — `render.yaml` (Render Blueprint) + Dockerfile com `$PORT` dinâmico
+- [x] 5.3 Config de deploy do frontend — `vercel.json` + `public/` exigido pelo Docker build
+- [x] 5.4 Variáveis de produção documentadas (`DEPLOY.md` + Blueprint)
+- [ ] 5.5 Deploy manual nos dashboards (Render Blueprint + Vercel) e smoke tests em produção
+      ⚠️ Falta obter o `SUPABASE_JWT_SECRET` (dashboard Supabase → Settings → API)
 
 ---
 

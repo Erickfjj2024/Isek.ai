@@ -1,0 +1,47 @@
+# Render Blueprint — deploy do backend FastAPI do Isek.AI
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Como usar:
+#   1. No dashboard do Render: New → Blueprint → conecte este repositório
+#   2. O Render lê este arquivo e cria o serviço automaticamente
+#   3. Preencha as variáveis marcadas com `sync: false` no dashboard
+#      (valores em backend/.env — ver DEPLOY.md)
+
+services:
+  - type: web
+    name: isek-ai-backend
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      # URL do frontend na Vercel (ex.: https://isek-ai.vercel.app)
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      # Dashboard Supabase → Settings → API → JWT Secret
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: LLM_PROVIDER
+        value: groq
+      # Chave do console.groq.com (ou aistudio.google.com se LLM_PROVIDER=gemini)
+      - key: LLM_API_KEY
+        sync: false
+      # Vazio = padrão do provedor (groq → llama-3.3-70b-versatile)
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
+      - key: MANA_COST_PER_STORY
+        value: "10"
+      - key: MANA_WELCOME_BONUS
+        value: "100"
